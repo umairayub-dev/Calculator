@@ -22,3 +22,7 @@ function getResult() {
         result.value = value
     }
 }
+
+function square() {
+    result.value = result.value * result.value
+}

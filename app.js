@@ -24,5 +24,7 @@ function getResult() {
 }
 
 function square() {
-    result.value = result.value * result.value
+    if (result.value.length != 0 || result.value != "") {
+        result.value = result.value * result.value
+    }
 }

@@ -1,18 +1,24 @@
-var result = document.getElementById('result').value
+var result = document.getElementById('result')
 
-function getNumb(num) {
-    document.getElementById('result').value += num
+function getNumber(num) {
+    result.value += num
 }
 
 function deleteValue() {
-   document.getElementById('result').value = document.getElementById('result').value.slice(0,result.length-1);
+    result.value = result.value.slice(0, result.value.length - 1);
 }
 
 function clearValue() {
-    document.getElementById('result').value = ""
+    result.value = ""
 }
 
 function getResult() {
-    // console.log(document.getElementById('result').value)
-    document.getElementById('result').value = eval(document.getElementById('result').value)
+    if (result.value.length != 0 || result.value != "") {
+        var value = eval(result.value)
+        if (value == "undefined" || value == undefined) {
+            result.value = "Invalid expression"
+            return
+        }
+        result.value = value
+    }
 }
